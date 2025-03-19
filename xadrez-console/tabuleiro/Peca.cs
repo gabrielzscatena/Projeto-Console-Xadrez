@@ -14,4 +14,9 @@ public class Peca
         this.Cor = cor;
         this.QtdeMovimentos = 0;
     }
+
+    public void IncrementarQtdeMovimentos()
+    {
+        QtdeMovimentos++;
+    }
 }
