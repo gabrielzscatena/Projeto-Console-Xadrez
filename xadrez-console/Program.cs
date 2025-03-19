@@ -9,12 +9,15 @@ public class Program
     {
         try
         {
-            PosicaoXadrez pos = new PosicaoXadrez('a', 1);
-            PosicaoXadrez pos2 = new PosicaoXadrez('c', 7);
-
-            Console.WriteLine(pos);
-            Console.WriteLine(pos.convertePosicao());
-            Console.WriteLine(pos2.convertePosicao());
+            Tabuleiro tab = new Tabuleiro(8, 8);
+            
+            tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0,0));
+            tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(1,3));
+            tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(0,2));
+            
+            tab.colocarPeca(new Torre(tab, Cor.Branca), new Posicao(3,5));
+                
+            Tela.ImprimirTabuleiro(tab);
         }
         catch (TabuleiroException ex)
         {
