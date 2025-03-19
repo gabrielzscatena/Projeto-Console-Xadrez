@@ -13,7 +13,7 @@ public class PosicaoXadrez
         this.Linha = linha;
     }
 
-    public Posicao convertePosicao()
+    public Posicao ConvertePosicao()
     {
         return new Posicao(8 - Linha, Coluna - 'a');
     }
