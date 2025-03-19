@@ -23,7 +23,9 @@
 
 # Rider ignored files
 /projectSettingsUpdater.xml
-/.idea.xadrez-console.iml
+.idea.xadrez-console.iml
+.idea/.idea.xadrez-console/.idea
+.idea/*
 
 *.suo
 *.user
