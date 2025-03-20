@@ -22,11 +22,12 @@ public class Program
                     Console.Write("Origem: ");
                     Posicao origem = Tela.LerPosicaoXadrez().ConvertePosicao();
                     partida.ValidarPosicaoDeOrigem(origem);
-
+                    
                     bool[,] posicoesPossiveis = partida.Tab.Peca(origem).MovimentosPossiveis();
-
+                    
                     Console.Clear();
                     Tela.ImprimirTabuleiro(partida.Tab, posicoesPossiveis);
+                    
                     Console.Write("Destino: ");
                     Posicao destino = Tela.LerPosicaoXadrez().ConvertePosicao();
                     partida.ValidarPosicaoDeDestino(origem, destino);
@@ -39,6 +40,8 @@ public class Program
                     Console.ReadLine();
                 }
             }
+            Console.Clear();
+            Tela.ImprimirPartida(partida);
         }
         catch (TabuleiroException ex)
         {
