@@ -29,7 +29,7 @@ public class Dama : Peca
             {
                 break;
             }
-            pos.DefinirValores(pos.Linha, Posicao.Coluna - 1);
+            pos.DefinirValores(pos.Linha, pos.Coluna - 1);
         }
         
         // Verif Direita
@@ -41,7 +41,7 @@ public class Dama : Peca
             {
                 break;
             }
-            pos.DefinirValores(pos.Linha, Posicao.Coluna + 1);
+            pos.DefinirValores(pos.Linha, pos.Coluna + 1);
         }
         
         // Verif Acima
@@ -53,7 +53,7 @@ public class Dama : Peca
             {
                 break;
             }
-            pos.DefinirValores(pos.Linha - 1, Posicao.Coluna);
+            pos.DefinirValores(pos.Linha - 1, pos.Coluna);
         }
         
         // Verif Abaixo
@@ -65,7 +65,7 @@ public class Dama : Peca
             {
                 break;
             }
-            pos.DefinirValores(pos.Linha + 1, Posicao.Coluna);
+            pos.DefinirValores(pos.Linha + 1, pos.Coluna);
         }
         
         // Verif Noroeste
@@ -77,7 +77,7 @@ public class Dama : Peca
             {
                 break;
             }
-            pos.DefinirValores(pos.Linha - 1, Posicao.Coluna - 1);
+            pos.DefinirValores(pos.Linha - 1, pos.Coluna - 1);
         }
         
         // Verif Nordeste
@@ -89,7 +89,7 @@ public class Dama : Peca
             {
                 break;
             }
-            pos.DefinirValores(pos.Linha - 1, Posicao.Coluna + 1);
+            pos.DefinirValores(pos.Linha - 1, pos.Coluna + 1);
         }
         
         // Verif Sudoeste
@@ -101,7 +101,7 @@ public class Dama : Peca
             {
                 break;
             }
-            pos.DefinirValores(pos.Linha + 1, Posicao.Coluna - 1);
+            pos.DefinirValores(pos.Linha + 1, pos.Coluna - 1);
         }
         
         // Verif Sudeste
@@ -113,7 +113,7 @@ public class Dama : Peca
             {
                 break;
             }
-            pos.DefinirValores(pos.Linha + 1, Posicao.Coluna + 1);
+            pos.DefinirValores(pos.Linha + 1, pos.Coluna + 1);
         }
 
         return mat;

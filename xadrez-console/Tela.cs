@@ -99,7 +99,7 @@ public class Tela
     {
         string s = Console.ReadLine();
         char coluna = s[0];
-        int linha = int.Parse(s[1] + "");
+        int linha = int.Parse(s[1].ToString());
         return new PosicaoXadrez(coluna, linha);
     }
 
