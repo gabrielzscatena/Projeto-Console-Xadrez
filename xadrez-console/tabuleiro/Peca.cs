@@ -19,6 +19,11 @@ public abstract class Peca
     {
         QtdeMovimentos++;
     }
+    
+    public void DecrementarQtdeMovimentos()
+    {
+        QtdeMovimentos--;
+    }
 
     public bool ExisteMovimentosPossiveis()
     {

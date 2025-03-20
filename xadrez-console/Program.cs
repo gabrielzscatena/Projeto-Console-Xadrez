@@ -27,8 +27,6 @@ public class Program
 
                     Console.Clear();
                     Tela.ImprimirTabuleiro(partida.Tab, posicoesPossiveis);
-
-                    Console.WriteLine();
                     Console.Write("Destino: ");
                     Posicao destino = Tela.LerPosicaoXadrez().ConvertePosicao();
                     partida.ValidarPosicaoDeDestino(origem, destino);

@@ -14,6 +14,10 @@ public class Tela
         Console.WriteLine();
         Console.WriteLine("Turno: " + partida.Turno);
         Console.WriteLine("Aguardando jogada: " + partida.JogadorAtual);
+        if (partida.Xeque)
+        {
+            Console.WriteLine("XEQUE!");
+        }
 
     }
 
@@ -74,6 +78,7 @@ public class Tela
                 {
                     Console.BackgroundColor = fundoOriginal;
                 }
+                
                 ImprimirPeca(tab.Peca(i, j));
                 Console.BackgroundColor = fundoOriginal;
             }
