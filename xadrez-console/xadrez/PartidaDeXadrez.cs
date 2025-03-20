@@ -137,7 +137,49 @@ public class PartidaDeXadrez
             DesfazMovimento(origem, destino, pecaCapturada);
             throw new TabuleiroException("Você não pode se colocar em xeque!");
         }
-
+        
+        Peca p = Tab.Peca(destino);
+        
+        // #JogadaEspecial Promoção
+        if (p is Peao)
+        {
+            if (p.Cor == Cor.Branca && destino.Linha == 0
+                || p.Cor == Cor.Preta && destino.Linha == 7)
+            {
+                Console.WriteLine("Peão alcançou a promoção!");
+                Console.WriteLine("Escolha a peça: ('D' para Dama, 'T' para Torre, 'C' para Cavalo, 'B' para Bispo): ");
+                char escolha = Console.ReadLine().ToUpper()[0];
+                
+                p = Tab.RetirarPeca(destino);
+                _pecas.Remove(p);
+                
+                Peca novaPeca;
+                switch (escolha)
+                {
+                    case 'D':
+                        novaPeca = new Dama(Tab, p.Cor);
+                        break;
+                    case 'T':
+                        novaPeca = new Torre(Tab, p.Cor);
+                        break;
+                    case 'C':
+                        novaPeca = new Cavalo(Tab, p.Cor);
+                        break;
+                    case 'B':
+                        novaPeca = new Bispo(Tab, p.Cor);
+                        break;
+                    default:
+                        Console.WriteLine("Escolha inválida! Promovendo para Dama por padrão.");
+                        novaPeca = new Dama(Tab, p.Cor);
+                        break;
+                }
+                
+                Tab.ColocarPeca(novaPeca, destino);
+                _pecas.Add(novaPeca);
+                Console.WriteLine("Peão promovido para " + novaPeca + " em " + destino);
+            }
+        }
+        
         if (EstaEmXeque(Adversaria(JogadorAtual)))
         {
             Xeque = true;
@@ -156,8 +198,6 @@ public class PartidaDeXadrez
             Turno++;
             MudaJogador();
         }
-
-        Peca p = Tab.Peca(destino);
         
         // #JogadaEspecial En Passant
         if (p is Peao && (destino.Linha == origem.Linha - 2
